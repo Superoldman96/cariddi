@@ -409,7 +409,7 @@ func registerHTMLEvents(c *colly.Collector, event *Event) {
 // XML event triggering an action.
 func registerXMLEvents(c *colly.Collector, event *Event) {
 	// Create a callback on the XPath query searching for the URLs
-	c.OnXML("//url", func(e *colly.XMLElement) {
+	c.OnXML("//url/loc", func(e *colly.XMLElement) {
 		visitXMLLink(e.Text, event, e, c)
 	})
 
@@ -420,11 +420,6 @@ func registerXMLEvents(c *colly.Collector, event *Event) {
 
 	// Create a callback on the XPath query searching for the URLs
 	c.OnXML("//href", func(e *colly.XMLElement) {
-		visitXMLLink(e.Text, event, e, c)
-	})
-
-	// Create a callback on the XPath query searching for the URLs
-	c.OnXML("//loc", func(e *colly.XMLElement) {
 		visitXMLLink(e.Text, event, e, c)
 	})
 
