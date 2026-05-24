@@ -450,6 +450,13 @@ func GetSecretRegexes() []Secret {
 				"?",
 			},
 			{
+				"Github App Installation Token",
+				"Github App Installation Token (https://github.blog/changelog/2026-05-15-github-app-installation-tokens-per-request-override-header/)",
+				*regexp.MustCompile(`ghs_[A-Za-z0-9\._]{36,}`),
+				[]string{},
+				"?",
+			},
+			{
 				"GitLab CI/CD Job Token",
 				"GitLab CI/CD Job Token",
 				*regexp.MustCompile(`glcbt-[0-9a-zA-Z]{1,5}_[0-9a-zA-Z_-]{20}`),
