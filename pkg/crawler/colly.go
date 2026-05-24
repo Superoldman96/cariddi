@@ -229,7 +229,6 @@ func New(scan *Scan) *Results {
 		}
 
 		if path == "" || path == "/" {
-			visitURL("robots.txt")
 			visitURL("sitemap.xml")
 		}
 	}
